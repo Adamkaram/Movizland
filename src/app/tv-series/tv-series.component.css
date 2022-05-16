@@ -1,0 +1,57 @@
+.navbar {
+    background-color: rgba(57, 56, 56, 0.164);
+}
+
+.sticky-top {
+    position: fixed;
+    top: 0px;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+.background-header-image-1 {
+    background: linear-gradient(to bottom, rgba(128, 128, 128, 0.048) 0%, rgb(0, 0, 0) 60%), url("/assets/220-2205714_get-the-latest-movies-data-src-kodi-tv.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 500px;
+}
+
+.icon {
+    position: absolute;
+    top: 25%;
+    left: 40%;
+}
+
+@media only screen and (min-width:500px) and (max-width:650px) {
+    .icon {
+        top: 10%;
+        left: 30%
+    }
+}
+
+@media only screen and (min-width: 651px) and (max-width:767px) {
+    .icon {
+        top: 13%;
+        left: 30%
+    }
+}
+
+.card {
+    background-color: transparent;
+}
+
+.card-title {
+    color: white;
+}
+
+.card-img-top:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.btn:hover {
+    color: red!important;
+}

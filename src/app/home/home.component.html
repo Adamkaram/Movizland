@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+</head>
+
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="/assets/icons8-movie-64.png" alt=""> Moviezland
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" routerLink="/Trending">Movies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" routerLink="/TvSeries">TV Series</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--Header-->
+
+    <header class="mb-5">
+        <div id="img1" class="background-header-image-1">
+        </div>
+
+        <div class="collection-header-image">
+            <img class="collectionImage me-2 im-1" src="/assets/_315x420_800a239ebcbf1e87e945a975d78e0feb2867f249b84fbe0a5685475445399634.jpg" alt="">
+        </div>
+    </header>
+
+    <!--Trending Movies Content-->
+
+    <div class="d-flex justify-content-between">
+        <div class="text-danger my-3 p-3 fs-4">Trending Movies</div>
+        <a class="btn bg-transparent fs-4 p-3 me-5 text-white my-auto" routerLink="/Trending">View All....</a>
+    </div>
+    <div class="d-flex justify-content-between variable-width">
+        <div *ngFor="let movie of trendingMovies.results.slice(0,7)" class="card  my-2 text-center" style="width: 25rem;">
+            <span class="icon"><i class="bi bi-play-circle-fill fs-1 text-danger"></i></span>
+            <a href="/Movie/{{movie.id}}">
+                <img [src]="prefix + movie.poster_path" class="card-img-top " alt="...">
+            </a>
+            <div class="card-body">
+                <h6 class="card-title">{{movie.original_title}}</h6>
+            </div>
+        </div>
+    </div>
+
+    <!--Now Playing Movies Content-->
+
+    <div class="d-flex justify-content-between">
+        <div class="text-danger my-3 p-3 fs-4">Now Playing Movies</div>
+        <a class="btn bg-transparent fs-4 p-3 me-5 text-white my-auto" routerLink="/NowPlaying">View All....</a>
+    </div>
+    <div class="d-flex justify-content-between variable-width">
+        <div *ngFor="let nowplaying of nowPlayingMovies.results.slice(13,20)" class="card  my-2 text-center" style="width: 25rem;">
+            <span class="icon"><i class="bi bi-play-circle-fill fs-1 text-danger"></i></span>
+            <a href="/Movie/{{nowplaying.id}}">
+                <img [src]="prefix + nowplaying.poster_path" class="card-img-top " alt="...">
+            </a>
+            <div class="card-body">
+                <h6 class="card-title">{{nowplaying.original_title}}</h6>
+            </div>
+        </div>
+    </div>
+
+    <!--Top Rated Movies Content-->
+    <div class="d-flex justify-content-between">
+        <div class="text-danger my-3 p-3 fs-4">Top Rated Movies</div>
+        <a class="btn bg-transparent fs-4 p-3 me-5 text-white my-auto" routerLink="/TopRated">View All....</a>
+    </div>
+    <div class="d-flex justify-content-between variable-width">
+        <div *ngFor="let toprated of topRatedMovies.results.slice(13,20)" class="card  my-2 text-center" style="width: 25rem;">
+            <span class="icon"><i class="bi bi-play-circle-fill fs-1 text-danger"></i></span>
+            <a href="/Movie/{{toprated.id}}">
+                <img [src]="prefix + toprated.poster_path" class="card-img-top " alt="...">
+            </a>
+            <div class="card-body">
+                <h6 class="card-title">{{toprated.original_title}}</h6>
+            </div>
+        </div>
+    </div>
+
+    <!--Popular Kids Movies Content-->
+    <div class="d-flex justify-content-between">
+        <div class="text-danger my-3 p-3 fs-4">Popular Kids Movies</div>
+        <a class="btn bg-transparent fs-4 p-3 me-5 text-white my-auto" routerLink="/Kid">View All....</a>
+    </div>
+    <div class="d-flex justify-content-between variable-width">
+        <div *ngFor="let kids of popularkids.results.slice(0,7)" class="card  my-2 text-center" style="width: 25rem;">
+            <span class="icon"><i class="bi bi-play-circle-fill fs-1 text-danger"></i></span>
+            <a routerLink="/Movie/{{kids.id}}">
+                <img [src]="prefix + kids.poster_path" class="card-img-top " alt="...">
+            </a>
+            <div class="card-body">
+            </div>
+        </div>
+    </div>
+    <script src="jquery-3.6.0.min.js"></script>
+
+
+</body>
+
+</html>
